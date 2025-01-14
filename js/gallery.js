@@ -59,15 +59,24 @@ var mUrl = 'images.json';
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
 //@param A GalleryImage object. Use this method for an event handler for loading a gallery Image object (optional).
-function makeGalleryImageOnloadCallback(galleryImage) {
+function makeGalleryImageOnloadCallback(GalleryImage) {
 	return function(e) {
-		galleryImage.img = e.target;
-		mImages.push(galleryImage);
+		GalleryImage.img = e.target;
+		mImages.push(GalleryImage);
 	}
-}
+};
+
 
 function iterateJson() {
-  mJson.forEach(GalleryImage);
+  mJson.images.forEach(createGalleryImageObjects);
+  function createGalleryImageObjects() {
+    let galleryImageObjects = new GalleryImage('imgLocation', 'description', 'date', 'imgPath');
+    GalleryImage.imgLocation = mJson.images[].imgLocation;
+    GalleryImage.description = mJson.images[].description;
+    GalleryImage.date = mJson.images[].date;
+    GalleryImage.imgPath = mJson.images[].imgPath;
+    console.log(mJson.images[].imgLocation)
+  };
 };
 
 function fetchJSON() {
@@ -95,17 +104,18 @@ window.addEventListener('load', function() {
 
 }, false);
 
-function GalleryImage(location, description, date, img) {
+class GalleryImage {
+  constructor(location, description, date, img) {
 
-  this.location = location;
-  this.description = description;
-  this.date = date;
-  this.img = img;
+    this.location = location;
+    this.description = description;
+    this.date = date;
+    this.img = img;
 
-	//implement me as an object to hold the following data about an image:
-	//1. location where photo was taken
-	//2. description of photo
-	//3. the date when the photo was taken
-	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
+    //implement me as an object to hold the following data about an image:
+    //1. location where photo was taken
+    //2. description of photo
+    //3. the date when the photo was taken
+    //4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
+  }
 }
-
