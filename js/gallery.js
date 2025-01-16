@@ -33,6 +33,11 @@ function animate() {
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
 function swapPhoto() {
+   var slideShow = $("#slideShow")
+   var imgElement = $("#photo");
+  imgElement.attr("src", mImages[].img)
+
+
 	//Add code here to access the #slideShow element.
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
@@ -66,18 +71,18 @@ function makeGalleryImageOnloadCallback(GalleryImage) {
 	}
 };
 
-function iterateJson(item, index, arr) {
-  mJson.images.forEach(createGalleryImageObjects);
-  function createGalleryImageObjects(item, index, arr) {
-    let galleryImageObjects = new GalleryImage('imgLocation', 'description', 'date', 'imgPath');;
-    GalleryImage.imgLocation = mJson.images[index].imgLocation;
-    GalleryImage.description = mJson.images[index].description;
-    GalleryImage.date = mJson.images[index].date;
-    GalleryImage.imgPath = mJson.images[index].imgPath;
-    mImages.push(galleryImageObjects);
-  };
-
-  console.log(mImages)
+function iterateJson() {
+  mJson.images.forEach(element => {
+  let galleryImageObjects = new GalleryImage(
+    element.imgLocation,
+    element.description,
+    element.date,
+    element.imgPath
+  );
+  
+  mImages.push(galleryImageObjects);
+ });
+ console.log(mImages);
 };
 
 function fetchJSON() {
