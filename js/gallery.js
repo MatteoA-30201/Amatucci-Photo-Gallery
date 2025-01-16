@@ -66,17 +66,18 @@ function makeGalleryImageOnloadCallback(GalleryImage) {
 	}
 };
 
-
-function iterateJson() {
+function iterateJson(item, index, arr) {
   mJson.images.forEach(createGalleryImageObjects);
-  function createGalleryImageObjects() {
-    let galleryImageObjects = new GalleryImage('imgLocation', 'description', 'date', 'imgPath');
-    GalleryImage.imgLocation = mJson.images[].imgLocation;
-    GalleryImage.description = mJson.images[].description;
-    GalleryImage.date = mJson.images[].date;
-    GalleryImage.imgPath = mJson.images[].imgPath;
-    console.log(mJson.images[].imgLocation)
+  function createGalleryImageObjects(item, index, arr) {
+    let galleryImageObjects = new GalleryImage('imgLocation', 'description', 'date', 'imgPath');;
+    GalleryImage.imgLocation = mJson.images[index].imgLocation;
+    GalleryImage.description = mJson.images[index].description;
+    GalleryImage.date = mJson.images[index].date;
+    GalleryImage.imgPath = mJson.images[index].imgPath;
+    mImages.push(galleryImageObjects);
   };
+
+  console.log(mImages)
 };
 
 function fetchJSON() {
