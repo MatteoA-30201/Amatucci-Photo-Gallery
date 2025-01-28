@@ -134,3 +134,17 @@ class GalleryImage {
     //4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
   }
 }
+
+console.log($("img.moreIndicator").hasClass("rot90"));
+
+$(document).ready(function() {
+  $("img.moreIndicator").click(function() {
+    if ($("img.moreIndicator").hasClass("rot90")) {
+      $("img.moreIndicator").removeClass("rot90");
+      $("img.moreIndicator").addClass("rot270");
+    } else {
+      $("img.moreIndicator").removeClass("rot270");
+      $("img.moreIndicator").addClass("rot90");
+    }
+  });
+});
