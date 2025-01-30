@@ -146,5 +146,40 @@ $(document).ready(function() {
       $("img.moreIndicator").removeClass("rot270");
       $("img.moreIndicator").addClass("rot90");
     }
+    $("div.details").fadeToggle();
+  });
+
+  
+  $("#nextPhoto").click(function() {
+    if(mCurrentIndex >= mImages.length)
+      {
+        mCurrentIndex = 0;
+      }
+      
+   var imgElement = $("#photo");
+   imgElement.attr("src", mImages[mCurrentIndex].img);
+ 
+   $(".location").text("Location: " + mImages[mCurrentIndex].location);
+   $(".description").text("Description: " + mImages[mCurrentIndex].description);
+   $(".date").text("Date: " + mImages[mCurrentIndex].date);
+ 
+     mCurrentIndex++;
+  });
+
+  $("#prevPhoto").click(function() {
+    if(mCurrentIndex > mImages.length)
+      {
+        mCurrentIndex = 0;
+      }
+      
+   var imgElement = $("#photo");
+   imgElement.attr("src", mImages[mCurrentIndex].img);
+ 
+   $(".location").text("Location: " + mImages[mCurrentIndex].location);
+   $(".description").text("Description: " + mImages[mCurrentIndex].description);
+   $(".date").text("Date: " + mImages[mCurrentIndex].date);
+ 
+     mCurrentIndex--;
   });
 });
+

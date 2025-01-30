@@ -26,11 +26,11 @@ body {
 
 .moreIndicator {
 	height: 50px;
-	width: 74px;
+	width: 50px;
 	position: absolute;
 	z-index: 3;
 	opacity: .8;
-	top: 0px;
+  margin-bottom: 60px;
 }
 
 .thumbnail {
@@ -53,11 +53,22 @@ body {
 #prevPhoto {
 	height: 42px;
 	width: 42px;
+  transform: rotate(180deg);
+  transition: opacity 2s;
+}
+
+#prevPhoto:hover {
+  opacity: 0.8;
 }
 
 #nextPhoto {
 	height: 42px;
 	width: 42px;
+  transition: opacity 2s;
+}
+
+#nextPhoto:hover {
+  opacity: 0.8;
 }
 
 .details p {
@@ -86,3 +97,4 @@ Make it animate nicely. You'll need CSS3 for this*/
   transition: transform 2s;
   transform: rotate(270deg);
 }
+
