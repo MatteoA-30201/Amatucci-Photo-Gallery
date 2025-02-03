@@ -68,7 +68,7 @@ var mJson;
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = 'images.json';
+var mUrl;
 
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
@@ -95,6 +95,7 @@ function iterateJson() {
 };
 
 function fetchJSON() {
+  decideJson();
   mRequest.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
        // Typical action to be performed when the document is ready:
@@ -183,3 +184,17 @@ $(document).ready(function() {
   });
 });
 
+
+function decideJson() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const json = urlParams.get('json');
+  
+  if (json === "images-short.json") {
+    mUrl = "images-short.json";
+  } else {
+    mUrl = "images.json";
+  }
+  
+  console.log(mUrl);
+};
