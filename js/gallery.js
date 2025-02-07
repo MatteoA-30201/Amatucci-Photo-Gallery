@@ -192,9 +192,12 @@ function decideJson() {
   
   if (json === "images-short.json") {
     mUrl = "images-short.json";
+  } else if (json === "extra.json") {
+    mUrl = "extra.json";
   } else {
     mUrl = "images.json";
   }
-  
+
   console.log(mUrl);
 };
+

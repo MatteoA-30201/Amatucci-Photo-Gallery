@@ -1,0 +1,34 @@
+{
+    "images": [
+        {
+            "imgPath": "img/extras/0_0_26.JPG",
+            "imgLocation": "RDR2 image 1 (index 0)",
+            "description": "Waterfall rainbow",
+            "date": "02/6/2022"
+        },
+        {
+            "imgPath": "img/extras/0_0_27.JPG",
+            "imgLocation": "RDR2 image 2 (index 1)",
+            "description": "Snowy area",
+            "date": "02/6/2022"
+        },
+        {
+            "imgPath": "img/extras/0_0_29.JPG",
+            "imgLocation": "RDR2 image 3 (index 2)",
+            "description": "Swamp area",
+            "date": "02/6/2022"
+        },
+        {
+          "imgPath": "img/extras/0_0_55.JPG",
+          "imgLocation": "RDR2 image 4 (index 3)",
+          "description": "Great plains",
+          "date": "02/6/2022"
+      },
+    {
+      "imgPath": "img/extras/0_0_69.JPG",
+      "imgLocation": "RDR2 image 5 (index 4)",
+      "description": "Mountain",
+      "date": "02/6/2022"
+    }
+  ]
+}
